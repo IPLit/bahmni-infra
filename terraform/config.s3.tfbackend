@@ -1,3 +1,3 @@
-bucket         = "bahmni-tf-bucket"
-dynamodb_table = "bahmni-tf-lock"
+bucket         = "bahmni-sas-tf-state"
+dynamodb_table = "bahmni-sas-tf-state"
 region         = "ap-south-1"
