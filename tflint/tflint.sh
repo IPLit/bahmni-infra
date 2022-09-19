@@ -13,8 +13,6 @@ run_scan(){
     terraform_init
 
     echo -e "${GREEN_COLOR}TFLint Scanning $folder....$NO_COLOR"
-    tflint --config=$SCRIPT_DIR/.tflint.hcl --loglevel=info --init
-    tflint --config=$SCRIPT_DIR/.tflint.hcl --loglevel=info
 
     if [[ $? -eq 0 ]]
     then
