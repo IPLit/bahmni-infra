@@ -1,5 +1,5 @@
-cluster_name         = "bahmni-cluster-nonprod"
-node_role_name       = "BahmniEKSNodeRole-nonprod"
+cluster_name         = "bahmni-cluster-performance"
+node_role_name       = "BahmniEKSNodeRole-performance"
 node_group_name      = "performance"
 desired_num_of_nodes = 1
 min_num_of_nodes     = 1

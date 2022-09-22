@@ -1,3 +1,4 @@
 bucket         = "bahmni-lite-bucket"
+key            = "nonprod"
 dynamodb_table = "bahmni-lite-lock"
 region         = "ap-south-1"

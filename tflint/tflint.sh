@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+TF_LOG=WARN
 REL_SCRIPT_DIR="`dirname \"$0\"`"
 SCRIPT_DIR="`( cd \"$REL_SCRIPT_DIR\" && pwd)`"
 # sourcing git hub actions common script
