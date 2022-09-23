@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -e
-TF_LOG=WARN
+export TF_LOG="INFO"
 REL_SCRIPT_DIR="`dirname \"$0\"`"
 SCRIPT_DIR="`( cd \"$REL_SCRIPT_DIR\" && pwd)`"
 # sourcing git hub actions common script
@@ -14,6 +14,8 @@ run_scan(){
     terraform_init
 
     echo -e "${GREEN_COLOR}TFLint Scanning $folder....$NO_COLOR"
+    tflint --config=$SCRIPT_DIR/.tflint.hcl --init
+    tflint --config=$SCRIPT_DIR/.tflint.hcl
 
     if [[ $? -eq 0 ]]
     then
