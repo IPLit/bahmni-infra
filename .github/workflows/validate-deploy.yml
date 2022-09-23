@@ -27,7 +27,7 @@ jobs:
       - name: Setup TFLint
         uses: terraform-linters/setup-tflint@v1
         with:
-          tflint_version: v2.0.1
+          tflint_version: v0.40.1
       - name: TFLint
         run: ./tflint/tflint.sh
   tfsec:
