@@ -25,9 +25,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Setup TFLint
-        uses: terraform-linters/setup-tflint@v1
-        with:
-          tflint_version: v0.40.1
+        uses: terraform-linters/setup-tflint@v2
       - name: TFLint
         run: ./tflint/tflint.sh
   tfsec:
