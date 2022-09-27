@@ -14,7 +14,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Install Terrascan
-        run: brew install terrascan
+        run: |
+          curl -L https://github.com/tenable/terrascan/releases/download/v1.15.2/terrascan_1.15.2_Linux_x86_64.tar.gz > terrascan.tar.gz
+          tar -xf terrascan.tar.gz terrascan && rm terrascan.tar.gz
+          install terrascan /usr/local/bin && rm terrascan
       - name: Terrascan scan and validate
         run: ./terrascan/terrascan.sh
   
@@ -35,7 +38,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Install TFSec
-        run: brew install tfsec
+        run: |
+          curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash
       - name: TFSec
         run: ./tfsec/tfsec.sh
 
