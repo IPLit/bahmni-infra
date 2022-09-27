@@ -14,7 +14,7 @@ jobs:
       matrix:
         nodegroup: [
           { name: 'nonprod',minSize: 0,maxSize: 2,desiredSize: 0 },
-          { name: 'performance',minSize: 0,maxSize: 1,desiredSize: 0 }
+          # { name: 'performance',minSize: 0,maxSize: 1,desiredSize: 0 }
         ]
     env:
       CLUSTER_NAME: bahmni-cluster-nonprod
