@@ -61,11 +61,11 @@ jobs:
         run: sleep 300s
         shell: bash
 
-  post-notification:
-    name: Post Slack Notification
-    runs-on: ubuntu-latest
-    needs: start-nodegroups
-    steps:
-      - name: Post Deployment Status To Slack
-        run: |
-          curl -X POST -H 'Content-type: application/json' --data '{"text":":white_check_mark:  Hello, EKS Node Groups & RDS Instance started & will be available in 5 minutes"}' ${{ secrets.SLACK_WEBHOOK_URL }}
+  # post-notification:
+  #   name: Post Slack Notification
+  #   runs-on: ubuntu-latest
+  #   needs: start-nodegroups
+  #   steps:
+  #     - name: Post Deployment Status To Slack
+  #       run: |
+  #         curl -X POST -H 'Content-type: application/json' --data '{"text":":white_check_mark:  Hello, EKS Node Groups & RDS Instance started & will be available in 5 minutes"}' ${{ secrets.SLACK_WEBHOOK_URL }}

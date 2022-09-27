@@ -88,18 +88,18 @@ jobs:
           kubectl apply -f storageclass.yaml
 
 
-  slack-workflow-status:
-    name: Notify on Slack
-    if: ${{ always() }}
-    needs: [ provision-resources ]
-    runs-on: ubuntu-latest
-    env:
-      STATUS: ${{ (needs.provision-resources.result == 'success') && 'success' || 'failure' }}
-    steps:
-      - name: Slack notification
-        uses: 8398a7/action-slack@v3
-        with:
-          status: ${{ env.STATUS }}
-          fields: message,author,workflow,repo
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+  # slack-workflow-status:
+  #   name: Notify on Slack
+  #   if: ${{ always() }}
+  #   needs: [ provision-resources ]
+  #   runs-on: ubuntu-latest
+  #   env:
+  #     STATUS: ${{ (needs.provision-resources.result == 'success') && 'success' || 'failure' }}
+  #   steps:
+  #     - name: Slack notification
+  #       uses: 8398a7/action-slack@v3
+  #       with:
+  #         status: ${{ env.STATUS }}
+  #         fields: message,author,workflow,repo
+  #       env:
+  #         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
