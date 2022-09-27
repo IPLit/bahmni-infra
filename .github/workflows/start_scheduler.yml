@@ -25,7 +25,7 @@ jobs:
 
       - name: Start ${{ env.RDS_NAME }} RDS Instance
         run: |
-          aws rds start-db-instance --db-instance-identifier ${{ env.RDS_NAME }} > /dev/null 2>&1
+          aws rds start-db-instance --db-instance-identifier ${{ env.RDS_NAME }} | exit 0 > /dev/null 2>&1
 
       - name: Wait 5 mins for RDS to start
         run: sleep 300s
